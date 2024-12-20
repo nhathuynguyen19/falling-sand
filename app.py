@@ -194,7 +194,7 @@ class Box:
                         cell_below = self.cells[row + 1][col]
                         
                         if not cell_below.occupied:
-                            if current_cell.id != 3:
+                            if current_cell.id != 3 and current_cell.id != 0:
                                 self.falling_vertical(current_cell, cell_below)
                                 current_cell.dirty = True
                                 cell_below.dirty = True
@@ -223,6 +223,10 @@ def main():
     box = Box(game.width // 2, game.width // 2)
 
     running = True
+    print("Chọn '0' nothing")
+    print("Chọn '1' để gọi cát")
+    print("Chọn '2' để gọi nước")
+    
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
