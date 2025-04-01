@@ -1,0 +1,63 @@
+name: Python Package Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT_NAME: falling-sand
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+          
+      - name: Create tarball
+        run: |
+          tar --exclude=.git --exclude=.github -czvf ${PROJECT_NAME}-linux-macos.tar.gz . --ignore-failed-read
+          ls -la ${PROJECT_NAME}-linux-macos.tar.gz
+
+      - name: Upload Release Assets to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "${{ env.PROJECT_NAME }}-linux-macos.tar.gz"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-windows:
+    runs-on: windows-latest
+
+    env:
+      PROJECT_NAME: flappy-bird
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Create zip archive
+        run: |
+          Compress-Archive -Path * -DestinationPath ${env:PROJECT_NAME}-windows.zip -Force
+          Remove-Item ${env:PROJECT_NAME}-windows.zip
+          Get-ChildItem -Path * -Exclude .git, .github | Compress-Archive -DestinationPath ${env:PROJECT_NAME}-windows.zip
+          Get-Item ${env:PROJECT_NAME}-windows.zip
+
+      - name: Upload Release Assets to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "${{ env.PROJECT_NAME }}-windows.zip"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
