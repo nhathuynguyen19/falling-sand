@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+env/
+ENV/
+*.venv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# PyCharm settings
+.idea/
+
+# Logs and database
+logs/
+*.log
+*.sqlite3
+*.db
+
+# Cache files
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+*.cache
+*.pyc
+*.pyo
+.mypy_cache/
+pytest_cache/
+
+# Distribution / Packaging
+dist/
+build/
+*.egg
+pip-wheel-metadata/
+
+# Testing
+.tox/
+.nox/
+
+# Docker
+*.dockerignore
+docker-compose.override.yml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# More
+tempCodeRunnerFile.py
