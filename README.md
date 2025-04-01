@@ -2,7 +2,9 @@
 
 - **Download release**, **extract**, open **cmd** (Windows) or **Terminal** (macOS/Linux) in the project folder and run
 
-## Linux (Arch), macOS
+## Config
+
+### Linux (Arch), macOS
 
 ```sh
 python -m venv venv
@@ -11,7 +13,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## Windows
+### Windows
 
 ```sh
 python -m venv venv
@@ -19,3 +21,8 @@ venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
 ```
+
+## How to play
+
+Use 0, 1, 2, 3 to change material.
+Use mouse to control
