@@ -26,3 +26,8 @@ python app.py
 
 - Use 0, 1, 2, 3 to change material.
 - Use mouse to control.
+
+## Screenshot
+
+![image](https://github.com/user-attachments/assets/840403a1-e7e6-4090-bf59-d8293e150513)
+
