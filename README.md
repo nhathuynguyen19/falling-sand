@@ -24,7 +24,7 @@ python app.py
 
 ## How to play
 
-- Use 0, 1, 2, 3 to change material.
+- Use 0, 1, 2, 3,... to change material.
 - Use mouse to control.
 
 ## Screenshot
