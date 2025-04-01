@@ -37,7 +37,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      PROJECT_NAME: flappy-bird
+      PROJECT_NAME: falling-sand
 
     steps:
       - name: Checkout code
