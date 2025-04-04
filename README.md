@@ -1,7 +1,4 @@
 # falling sand
-
-# flappy bird
-
 - Download [Git](https://git-scm.com/downloads/win), install (if not installed).
 - Download [Python](https://www.python.org/), install (if not installed).
 - Follow this step.
